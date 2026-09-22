@@ -12,3 +12,7 @@ import type { TraceSimplificationSolver } from "./lib/solvers/TraceSimplificatio
 export type TraceSimplificationSolverOptions = ConstructorParameters<
   typeof TraceSimplificationSolver
 >[0]
+export { SingleSimplifiedPathSolver } from "./lib/solvers/SimplifiedPathSolver/SingleSimplifiedPathSolver"
+export { SingleSimplifiedPathSolver5 } from "./lib/solvers/SimplifiedPathSolver/SingleSimplifiedPathSolver5_Deg45"
+export { VertexShortcutPathSolver } from "./lib/solvers/SimplifiedPathSolver/VertexShortcutPathSolver"
+export { SingleRouteUselessViaRemovalSolver } from "./lib/solvers/UselessViaRemovalSolver/SingleRouteUselessViaRemovalSolver"
