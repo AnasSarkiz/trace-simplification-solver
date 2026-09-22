@@ -1,4 +1,4 @@
-import type { HighDensityRoute } from "lib/types/high-density-types"
+import type { HighDensityRoute } from "../../types/high-density-types"
 import type { RouteSection } from "./route-section"
 
 export const breakRouteIntoSections = (

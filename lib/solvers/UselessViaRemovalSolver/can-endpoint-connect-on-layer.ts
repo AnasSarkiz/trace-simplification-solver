@@ -1,6 +1,6 @@
 import type { ConnectivityMap } from "circuit-json-to-connectivity-map"
-import type { ObstacleSpatialHashIndex } from "lib/data-structures/ObstacleTree"
-import type { HighDensityRoute } from "lib/types/high-density-types"
+import type { ObstacleSpatialHashIndex } from "../../data-structures/ObstacleTree"
+import type { HighDensityRoute } from "../../types/high-density-types"
 
 export const canEndpointConnectOnLayer = ({
   endpointX,

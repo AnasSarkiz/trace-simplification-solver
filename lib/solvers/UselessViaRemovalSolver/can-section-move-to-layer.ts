@@ -1,8 +1,8 @@
 import { segmentToBoxMinDistance } from "@tscircuit/math-utils"
 import type { ConnectivityMap } from "circuit-json-to-connectivity-map"
-import type { HighDensityRouteSpatialIndex } from "lib/data-structures/HighDensityRouteSpatialIndex"
-import type { ObstacleSpatialHashIndex } from "lib/data-structures/ObstacleTree"
-import type { HighDensityRoute } from "lib/types/high-density-types"
+import type { HighDensityRouteSpatialIndex } from "../../data-structures/HighDensityRouteSpatialIndex"
+import type { ObstacleSpatialHashIndex } from "../../data-structures/ObstacleTree"
+import type { HighDensityRoute } from "../../types/high-density-types"
 import type { RouteSection } from "./route-section"
 
 export const canSectionMoveToLayer = ({

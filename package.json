@@ -3,18 +3,15 @@
   "version": "0.0.1",
   "description": "Incremental PCB trace simplification with via removal, merging, crossing reduction, and path simplification",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.ts",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
+    ".": "./index.ts"
   },
   "files": [
-    "dist"
+    "index.ts",
+    "lib"
   ],
   "license": "MIT",
   "repository": {
@@ -22,12 +19,8 @@
     "url": "https://github.com/tscircuit/trace-simplification-solver.git"
   },
   "scripts": {
-    "build": "tsup index.ts --format esm,cjs --dts --clean",
     "test": "bun test --timeout 120000",
-    "typecheck": "tsc --noEmit",
-    "format:check": "biome format .",
-    "benchmark": "bun scripts/benchmark.ts",
-    "prepack": "bun run build"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@tscircuit/math-utils": "0.0.36",
@@ -35,16 +28,14 @@
     "flatbush": "4.6.2",
     "graphics-debug": "0.0.99",
     "polished": "4.3.1",
-    "rbush": "4.0.1"
+    "rbush": "4.0.1",
+    "@types/rbush": "4.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
     "@resvg/resvg-js": "2.6.2",
     "@types/bun": "1.4.2",
-    "@types/rbush": "4.0.0",
     "looks-same": "9.0.1",
     "stack-svgs": "0.0.1",
-    "tsup": "8.5.1",
     "typescript": "5.9.3"
   }
 }

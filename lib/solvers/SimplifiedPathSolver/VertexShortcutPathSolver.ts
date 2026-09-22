@@ -1,5 +1,5 @@
-import type { HighDensityRoute } from "lib/types/high-density-types"
-import { calculate45DegreePaths } from "lib/utils/calculate45DegreePaths"
+import type { HighDensityRoute } from "../../types/high-density-types"
+import { calculate45DegreePaths } from "../../utils/calculate45DegreePaths"
 import { SingleSimplifiedPathSolver5 } from "./SingleSimplifiedPathSolver5_Deg45"
 
 type RoutePoint = HighDensityRoute["route"][number]

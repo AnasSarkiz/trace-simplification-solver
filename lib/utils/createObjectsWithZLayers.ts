@@ -1,7 +1,7 @@
 import {
   getUniqueValidZLayers,
   getUniqueValidZLayersFromLayerNames,
-} from "lib/utils/mapLayerNameToZ"
+} from "./mapLayerNameToZ"
 
 type LayerMappedObject = {
   __zLayers?: number[]

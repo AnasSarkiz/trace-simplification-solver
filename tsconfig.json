@@ -27,7 +27,6 @@
   "include": [
     "index.ts",
     "lib/**/*.ts",
-    "tests/**/*.ts",
-    "scripts/**/*.ts"
+    "tests/**/*.ts"
   ]
 }

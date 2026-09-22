@@ -4,7 +4,7 @@ import { ConnectivityMap } from "circuit-json-to-connectivity-map"
 import { TraceSimplificationSolver } from "lib/solvers/TraceSimplificationSolver/TraceSimplificationSolver"
 import type { Obstacle } from "lib/types"
 import type { HighDensityRoute } from "lib/types/high-density-types"
-import { seededRandom } from "lib/utils/cloneAndShuffleArray"
+import { seededRandom } from "tests/fixtures/seeded-random"
 
 type SeededViaDetourCase = {
   seed: number
