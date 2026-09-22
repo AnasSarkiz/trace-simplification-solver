@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ESNext", "DOM"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "lib/*": ["./lib/*"],
+      "tests/*": ["./tests/*"]
+    },
+    "types": ["bun"]
+  },
+  "include": ["index.ts", "lib/**/*.ts", "tests/**/*.ts"]
+}

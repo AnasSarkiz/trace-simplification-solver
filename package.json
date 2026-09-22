@@ -1,0 +1,40 @@
+{
+  "name": "@tscircuit/trace-simplification-solver",
+  "version": "0.0.1",
+  "description": "Incremental PCB trace simplification with via removal, merging, crossing reduction, and path simplification",
+  "type": "module",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": ["index.ts", "lib"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tscircuit/trace-simplification-solver.git"
+  },
+  "scripts": {
+    "test": "bun test --timeout 120000",
+    "typecheck": "tsc --noEmit",
+    "format:check": "biome format ."
+  },
+  "dependencies": {
+    "@tscircuit/math-utils": "0.0.36",
+    "circuit-json-to-connectivity-map": "0.0.19",
+    "flatbush": "4.6.2",
+    "graphics-debug": "0.0.99",
+    "polished": "4.3.1",
+    "rbush": "4.0.1",
+    "@types/rbush": "4.0.0"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "@types/bun": "1.4.2",
+    "looks-same": "9.0.1",
+    "stack-svgs": "0.0.1",
+    "typescript": "5.9.3",
+    "@biomejs/biome": "1.9.4"
+  }
+}
