@@ -18,3 +18,4 @@ export { VertexShortcutPathSolver } from "./lib/solvers/SimplifiedPathSolver/Ver
 export { SingleRouteUselessViaRemovalSolver } from "./lib/solvers/UselessViaRemovalSolver/SingleRouteUselessViaRemovalSolver"
 export { ObstacleSpatialHashIndex } from "./lib/data-structures/ObstacleTree"
 export { HighDensityRouteSpatialIndex } from "./lib/data-structures/HighDensityRouteSpatialIndex"
+export { calculate45DegreePaths } from "./lib/utils/calculate45DegreePaths"
