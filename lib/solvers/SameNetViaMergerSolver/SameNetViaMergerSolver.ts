@@ -440,11 +440,12 @@ export class SameNetViaMergerSolver extends BaseSolver {
         // follow it. Moving a subset leaves the old site occupied and lets the
         // next pass move those same routes back, without eliminating a via.
         const removable = new Set(remove)
-        const completeLocations = remove.filter((via) =>
-          (via.x === keep.x && via.y === keep.y) ||
-          viasAtLocation.get(this.getViaLocationKey(via))!.every(
-            (attached) => attached.mutable && removable.has(attached),
-          ),
+        const completeLocations = remove.filter(
+          (via) =>
+            (via.x === keep.x && via.y === keep.y) ||
+            viasAtLocation
+              .get(this.getViaLocationKey(via))!
+              .every((attached) => attached.mutable && removable.has(attached)),
         )
         if (completeLocations.length > 0) {
           candidateGroups.push({ keep, remove: completeLocations })
@@ -471,7 +472,8 @@ export class SameNetViaMergerSolver extends BaseSolver {
       if (touchedViaKeys.has(keepKey)) continue
 
       const remove = candidateGroup.remove.filter(
-        (viaToRemove) => !touchedViaKeys.has(this.getViaLocationKey(viaToRemove)),
+        (viaToRemove) =>
+          !touchedViaKeys.has(this.getViaLocationKey(viaToRemove)),
       )
       if (remove.length === 0) continue
 
