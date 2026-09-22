@@ -2,7 +2,10 @@ import {
   doSegmentsIntersect,
   pointToSegmentDistance,
 } from "@tscircuit/math-utils"
-import { HighDensityIntraNodeRoute, Jumper } from "../../types/high-density-types"
+import {
+  HighDensityIntraNodeRoute,
+  Jumper,
+} from "../../types/high-density-types"
 import { BaseSolver } from "../BaseSolver"
 import { Obstacle } from "../../types"
 import { GraphicsObject } from "graphics-debug"
