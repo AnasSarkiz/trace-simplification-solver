@@ -1,0 +1,14 @@
+export { TraceSimplificationSolver } from "./lib/solvers/TraceSimplificationSolver/TraceSimplificationSolver"
+export { MultiSimplifiedPathSolver } from "./lib/solvers/SimplifiedPathSolver/MultiSimplifiedPathSolver"
+export { UselessViaRemovalSolver } from "./lib/solvers/UselessViaRemovalSolver/UselessViaRemovalSolver"
+export { SameNetViaMergerSolver } from "./lib/solvers/SameNetViaMergerSolver/SameNetViaMergerSolver"
+export { CrossingViaReductionSolver } from "./lib/solvers/CrossingViaReductionSolver/crossing-via-reduction-solver"
+export type {
+  HighDensityRoute,
+  HighDensityIntraNodeRoute,
+} from "./lib/types/high-density-types"
+export type { Obstacle } from "./lib/types"
+import type { TraceSimplificationSolver } from "./lib/solvers/TraceSimplificationSolver/TraceSimplificationSolver"
+export type TraceSimplificationSolverOptions = ConstructorParameters<
+  typeof TraceSimplificationSolver
+>[0]

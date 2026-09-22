@@ -1,0 +1,4 @@
+node_modules/
+dist/
+*.diff.png
+benchmark-results/
