@@ -925,27 +925,22 @@ export class SingleSimplifiedPathSolver5 extends SingleSimplifiedPathSolver {
     }
 
     if (!path45 && !this.lastValidPath) {
-      const oldTailPoint = this.getPointAtDistance(this.tailDistanceAlongPath)
-
-      // Move tail and head forward by stepSize
-      this.tailDistanceAlongPath += this.minStepSize
-      this.moveHead(this.minStepSize)
-
-      const newTailIndex = this.getNearestIndexForDistance(
-        this.tailDistanceAlongPath,
+      const segmentIndex = this.pathSegments.findIndex(
+        (segment) => segment.endDistance > this.tailDistanceAlongPath,
       )
-      const newTailPoint = this.inputRoute.route[newTailIndex]
-      const lastRoutePoint =
-        this.inputRoute.route[this.inputRoute.route.length - 1]
-
-      // Add the segment from old tail to new tail
-      if (
-        !this.arePointsEqual(oldTailPoint, newTailPoint) &&
-        !this.arePointsEqual(newTailPoint, lastRoutePoint)
-      ) {
-        this.newRoute.push(newTailPoint)
+      if (segmentIndex === -1) {
+        throw new Error("No original segment remains at the blocked path tail")
       }
-
+      // Follow the original segment to its endpoint. Jumping to a sampled
+      // point's nearest vertex can skip a bend without checking clearance.
+      this.appendOriginalRouteSlice(
+        this.tailDistanceAlongPath,
+        segmentIndex + 1,
+      )
+      this.tailDistanceAlongPath = this.pathSegments[segmentIndex].endDistance
+      this.headDistanceAlongPath = this.tailDistanceAlongPath
+      this.lastValidPathHeadDistance = this.tailDistanceAlongPath
+      this.currentStepSize = this.maxStepSize
       return
     }
 

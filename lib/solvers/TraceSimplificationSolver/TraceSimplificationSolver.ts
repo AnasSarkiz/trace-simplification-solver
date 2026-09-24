@@ -122,6 +122,7 @@ export class TraceSimplificationSolver extends BaseSolver {
       readonly preserveRouteEndpoints?: boolean
       readonly useTraceWidthAwareClearance?: boolean
       readonly enableVertexShortcuts?: boolean
+      readonly effort?: number
       readonly terminalLayerIndicesByPcbPortId?: ReadonlyMap<
         string,
         ReadonlySet<number>
@@ -129,6 +130,11 @@ export class TraceSimplificationSolver extends BaseSolver {
     },
   ) {
     super()
+    const effort = simplificationConfig.effort ?? 1
+    if (!Number.isFinite(effort) || effort <= 0) {
+      throw new Error("effort must be a positive finite number")
+    }
+    this.MAX_SIMPLIFICATION_PIPELINE_LOOPS = Math.ceil(2 * effort)
     this.simplificationConfig = {
       ...simplificationConfig,
       obstacles: createObjectsWithZLayers(
